@@ -85,16 +85,12 @@ span {
 
 @media (max-width: 600px){
     body{
-        margin: 20px
-    }
-
-    select{
-        height: 60px;
+        margin: 10px
     }
     
     header {
         flex-direction: column;
-        margin-bottom: 20px;
+        height: 200px;
     }
     
     #color-container {

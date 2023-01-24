@@ -83,4 +83,29 @@ span {
     left: 50%;
 }
 
+@media (max-width: 600px){
+    body{
+        margin: 10px
+    }
+    
+    header {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    
+    #color-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, minmax(100px,1fr));
+    grid-row-gap: 10px;
+    }
 
+    .palette-color{
+        height: 200px;
+    }
+
+    .palette-container {
+        overflow: hidden;
+        border-radius: 10px;
+        background: #E7E4E4;
+    }
+}

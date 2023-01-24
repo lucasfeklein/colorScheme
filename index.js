@@ -1,7 +1,3 @@
-
-
-
-
 function render() {
     const mode = document.getElementById('select-mode').value.toLowerCase()
     const colorHex = document.getElementById('select-color').value.substring(1)
@@ -15,15 +11,15 @@ function render() {
             let teste = false
             for (let color of colorsArray) {
                 colorHtml += `
-                    <div>
+                    <div class='palette-container'>
                         <div style='background: ${color.hex.value}' class="palette-color" data-color=${color.hex.value}>
                             <span class='copy' id=${color.hex.value}></span>
                         </div>     
                         <span>${color.hex.value}</span>
                     </div>
-                    
                 `
             }
+
             document.getElementById('color-container').innerHTML = colorHtml
 
             document.querySelectorAll('[data-color]').forEach(el => {
@@ -47,14 +43,8 @@ function render() {
                 })
             }
             )
-
-
-
         })
 }
-
-
-
 
 document.getElementById('btn').addEventListener('click', render)
 render()

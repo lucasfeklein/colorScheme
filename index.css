@@ -83,7 +83,7 @@ span {
     left: 50%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 468px){
     body{
         margin: 10px
     }

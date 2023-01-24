@@ -11,9 +11,9 @@ function render() {
             let teste = false
             for (let color of colorsArray) {
                 colorHtml += `
-                    <div class='palette-container'>
-                        <div style='background: ${color.hex.value}' class="palette-color" data-color=${color.hex.value}>
-                            <span class='copy' id=${color.hex.value}></span>
+                    <div class='palette-container' data-color=${color.hex.value}>
+                        <div style='background: ${color.hex.value}' class="palette-color">
+                            <span class='copy'></span>
                         </div>     
                         <span>${color.hex.value}</span>
                     </div>
@@ -22,24 +22,25 @@ function render() {
 
             document.getElementById('color-container').innerHTML = colorHtml
 
-            document.querySelectorAll('[data-color]').forEach(el => {
+            document.querySelectorAll('.palette-container').forEach(el => {
+                const copyEl = el.querySelector('.copy')
                 el.addEventListener('click', () => {
                     navigator.clipboard.writeText(el.dataset.color)
-                    document.getElementById(el.dataset.color).innerText = 'Copied!'
-                    document.getElementById(el.dataset.color).style.display = 'flex';
+                    copyEl.innerText = 'Copied!'
+                    copyEl.style.display = 'flex';
                     setTimeout(function () {
-                        document.getElementById(el.dataset.color).style.display = 'none';
+                        copyEl.style.display = 'none';
                     }, 600)
                 })
 
                 el.addEventListener('mouseover', () => {
-                    document.getElementById(el.dataset.color).innerText = 'Copy!'
-                    document.getElementById(el.dataset.color).style.display = 'flex';
+                    copyEl.innerText = 'Copy!'
+                    copyEl.style.display = 'flex';
                 })
 
                 el.addEventListener('mouseout', () => {
-                    document.getElementById(el.dataset.color).innerText = ''
-                    document.getElementById(el.dataset.color).style.display = 'none';
+                    copyEl.innerText = ''
+                    copyEl.style.display = 'none';
                 })
             }
             )

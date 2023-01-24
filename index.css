@@ -60,16 +60,27 @@ button {
     
 }
 
-#palette-color{
-    height: calc(100vh - 150px)
+.palette-color{
+    position: relative;
+    height: calc(100vh - 150px);
+    cursor: pointer;
 }
 
 span {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     height: 50px;
     font-weight: bold;    
 }
+
+.copy{
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    left: 50%;
+}
+
 
